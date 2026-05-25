@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Design handoff bundles — source material, not part of the codebase
+design_package/
+handoff_new/
+*.tgz
+*.zip
+
+# Claude Code — keep launch.json, ignore local permission cache
+.claude/settings.local.json
+.claude/memory/
+
+# Editor / tooling
+.vscode/
+*.swp
+*.swo
+
+# Dependency directories (in case a build step is added later)
+node_modules/
