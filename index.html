@@ -3,80 +3,536 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ICT — Turn technology complexity into competitive advantage</title>
-<meta name="description" content="ICT partners with leading organisations in Qatar to design, secure, and scale intelligent digital ecosystems powered by cloud, AI, and cyber resilience." />
-
+<title>ICT Digital Design System</title>
+<meta name="description" content="The living design system extracted from the ICT website — principles, colour, type, components, motion and the rules for extending it to decks, proposals and marketing." />
 <link rel="stylesheet" href="ds/colors_and_type.css" />
-<link rel="stylesheet" href="styles.css" />
-
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/home.css" />
+<link rel="stylesheet" href="css/service.css" />
+<link rel="stylesheet" href="css/pages.css" />
+<link rel="stylesheet" href="css/design-system.css" />
 </head>
 <body>
-<div id="root" class="page"></div>
+<div class="ds">
 
-<script type="text/babel" src="components/Nav.jsx"></script>
-<script type="text/babel" src="components/Hero.jsx"></script>
-<script type="text/babel" src="components/TrustedBy.jsx"></script>
-<script type="text/babel" src="components/Services.jsx"></script>
-<script type="text/babel" src="components/WhyICT.jsx"></script>
-<script type="text/babel" src="components/SuccessStories.jsx"></script>
-<script type="text/babel" src="components/CTABanner.jsx"></script>
-<script type="text/babel" src="components/Footer.jsx"></script>
+  <!-- ============ SIDEBAR ============ -->
+  <nav class="ds-nav" aria-label="Design system contents">
+    <div class="ds-nav__brand"><img class="ds-nav__logo" src="assets/ict-logo.png" alt="ICT" /></div>
+    <p class="ds-nav__tag">Digital Design System · v1.0</p>
+    <ol>
+      <li><a href="#philosophy"><span class="n">01</span> Design Philosophy</a></li>
+      <li><a href="#principles"><span class="n">02</span> Visual Principles</a></li>
+      <li><a href="#colour"><span class="n">03</span> Colour System</a></li>
+      <li><a href="#gradient"><span class="n">04</span> Gradient &amp; Light</a></li>
+      <li><a href="#type"><span class="n">05</span> Typography</a></li>
+      <li><a href="#layout"><span class="n">06</span> Layout &amp; Grid</a></li>
+      <li><a href="#components"><span class="n">07</span> Components</a></li>
+      <li><a href="#icons"><span class="n">08</span> Iconography</a></li>
+      <li><a href="#illustration"><span class="n">09</span> Illustration</a></li>
+      <li><a href="#motion"><span class="n">10</span> Motion &amp; Interaction</a></li>
+      <li><a href="#content"><span class="n">11</span> Content Design</a></li>
+      <li><a href="#decks"><span class="n">12</span> Presentation Decks</a></li>
+      <li><a href="#tokens"><span class="n">13</span> Design Tokens</a></li>
+    </ol>
+  </nav>
 
-<script type="text/babel">
-  const { useEffect } = React;
+  <main class="ds-main">
 
-  function useScrollReveal() {
-    useEffect(() => {
-      const els = document.querySelectorAll(".reveal");
-      const io = new IntersectionObserver(
-        (entries) => {
-          for (const e of entries) {
-            if (e.isIntersecting) {
-              e.target.classList.add("is-in");
-              io.unobserve(e.target);
-            }
-          }
-        },
-        { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
-      );
-      els.forEach((el) => io.observe(el));
-      return () => io.disconnect();
-    }, []);
-  }
+    <!-- ============ 01 PHILOSOPHY ============ -->
+    <section class="ds-sec" id="philosophy">
+      <p class="ds-kicker">ICT Digital Design System</p>
+      <h1 class="ds-h" style="font-size:clamp(34px,5vw,64px);max-width:18ch">The design language behind the ICT experience.</h1>
+      <p class="ds-lead">This is not a logo sheet. It is the working system that emerged from designing the ICT website — the principles, colour behaviour, type, components, motion and content patterns that make every screen feel like one considered, enterprise-grade product. Apply it and a deck, a proposal, a PDF or a future page will read as part of the same ecosystem.</p>
+      <p class="ds-p" style="margin-top:28px">The work is built for the people who buy and govern enterprise technology — CIOs, CTOs, CEOs, transformation and infrastructure leaders. So the design leads with <em style="color:#fff;font-style:normal">strategic clarity, not technical noise</em>: structure and typography carry the message; colour is used as hierarchy and rhythm, never decoration; motion is quiet and purposeful.</p>
+      <div class="ds-cols">
+        <div class="ds-cell" style="--cmk:var(--hue-blue-d)"><h4>Premium &amp; restrained</h4><p>Generous space, hairline structure, deliberate type. Confidence shown through calm, not embellishment.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-purple-d)"><h4>Enterprise-credible</h4><p>Built to reassure boards and buyers. Stable, legible, accountable — never trendy, flashy or template-like.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-magenta-d)"><h4>Strategic, not technical</h4><p>Leads with outcomes and clarity. Technology is the means; business value is the message.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-violet-d)"><h4>Human &amp; accessible</h4><p>Plain language, real contrast, considered reading widths. Sophisticated without being cold or sterile.</p></div>
+      </div>
+    </section>
 
-  function App() {
-    useScrollReveal();
-    return (
-      <>
-        <Nav />
-        <main>
-          <Hero />
-          <TrustedBy />
-          <Services />
-          <WhyICT />
-          <SuccessStories />
-          <CTABanner />
-        </main>
-        <Footer />
-      </>
-    );
-  }
+    <!-- ============ 02 PRINCIPLES ============ -->
+    <section class="ds-sec ds-sec--paper" id="principles">
+      <p class="ds-kicker">02 — Visual principles</p>
+      <h2 class="ds-h">Ten principles that hold the system together.</h2>
+      <p class="ds-lead">Every decision on the site traces back to these. When a new layout is in doubt, return here.</p>
+      <div class="ds-cols">
+        <div class="ds-cell" style="--cmk:var(--hue-blue-p)"><h4>Hierarchy first</h4><p>One clear focal point per view. Size, weight and space do the ranking — not boxes or colour.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-purple-p)"><h4>Breathing room</h4><p>Space is a feature. Sections run 76–150px tall; content is never crowded to the edges.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-magenta-p)"><h4>Controlled density</h4><p>Say less, with more weight. Trim copy to its proof; resist filler stats and icons.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-violet-p)"><h4>High, honest contrast</h4><p>Deep navy or warm paper — committed surfaces, never muddy mid-greys. Text always clears AA.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-orange-p)"><h4>Colour as rhythm</h4><p>The palette is distributed across sections so the eye travels. No page leans on one accent.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-blue-p)"><h4>Structural hairlines</h4><p>1px rules and divided grids organise content like an editorial layout — calm, exact.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-purple-p)"><h4>Type carries the design</h4><p>Space Grotesk display + Inter body. Tight tracking, balanced wrap, generous scale.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-magenta-p)"><h4>Component consistency</h4><p>The same card, head and button behave identically everywhere. Surprise lives in content, not chrome.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-violet-p)"><h4>Quiet motion</h4><p>Soft reveals and small hover shifts. Motion clarifies sequence; it never performs.</p></div>
+        <div class="ds-cell" style="--cmk:var(--hue-orange-p)"><h4>Drawn, not stocky</h4><p>Abstract line-systems over photography clichés. Iconography is single-weight and precise.</p></div>
+      </div>
+    </section>
 
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<App />);
+    <!-- ============ 03 COLOUR ============ -->
+    <section class="ds-sec" id="colour">
+      <p class="ds-kicker">03 — Colour system</p>
+      <h2 class="ds-h">A dual-surface canvas, an accent palette as <span class="tword">rhythm</span>.</h2>
+      <p class="ds-lead">Colour is structured in three layers: committed surfaces, a quiet text scale, and a five-hue accent palette distributed across the experience. The accents never fill large areas — they mark, highlight and lead the eye.</p>
 
-  // Lucide icon pass once after initial render
-  requestAnimationFrame(() => {
-    setTimeout(() => {
-      if (window.lucide) window.lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
-    }, 80);
+      <h3 class="ds-sub">Surfaces</h3>
+      <div class="ds-swatches">
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#060512"></div><div class="ds-sw__meta"><div class="ds-sw__name">Ink Deep</div><div class="ds-sw__hex">#060512 · heroes, CTAs</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#0A091E"></div><div class="ds-sw__meta"><div class="ds-sw__name">Ink</div><div class="ds-sw__hex">#0A091E · primary dark</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#100F26"></div><div class="ds-sw__meta"><div class="ds-sw__name">Ink 2</div><div class="ds-sw__hex">#100F26 · raised surface</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#F3F1EA"></div><div class="ds-sw__meta"><div class="ds-sw__name">Paper</div><div class="ds-sw__hex">#F3F1EA · light sections</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#E9E6DC"></div><div class="ds-sw__meta"><div class="ds-sw__name">Paper 2</div><div class="ds-sw__hex">#E9E6DC · subtle blocks</div></div></div>
+      </div>
+
+      <h3 class="ds-sub">Brand spectrum</h3>
+      <p class="ds-note">The six-tick spectrum is the brand signature — used as discrete geometry (logo, tick marks, divider rhythm), never as a gradient fill in content.</p>
+      <div class="ds-spectrum">
+        <i style="background:#0098FF">0098FF</i><i style="background:#370FDD">370FDD</i><i style="background:#612DF5">612DF5</i><i style="background:#CC47AB">CC47AB</i><i style="background:#FC7F40">FC7F40</i><i style="background:#FF2A68">FF2A68</i>
+      </div>
+
+      <h3 class="ds-sub">Accent palette — two values per hue</h3>
+      <p class="ds-note">Each accent ships a <b style="color:#fff">bright</b> value for dark navy and a <b style="color:#fff">deep</b> value for paper, both contrast-checked. A section adopts one hue; its eyebrow tick and highlighted keyword share it.</p>
+      <div class="ds-swatches" style="margin-top:18px">
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#2BA4FF"></div><div class="ds-sw__meta"><div class="ds-sw__name">Blue · dark</div><div class="ds-sw__hex">#2BA4FF</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#8472FF"></div><div class="ds-sw__meta"><div class="ds-sw__name">Purple · dark</div><div class="ds-sw__hex">#8472FF</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#B481FF"></div><div class="ds-sw__meta"><div class="ds-sw__name">Violet · dark</div><div class="ds-sw__hex">#B481FF</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#E36CC4"></div><div class="ds-sw__meta"><div class="ds-sw__name">Magenta · dark</div><div class="ds-sw__hex">#E36CC4</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#FF9255"></div><div class="ds-sw__meta"><div class="ds-sw__name">Orange · dark</div><div class="ds-sw__hex">#FF9255</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#1366C8"></div><div class="ds-sw__meta"><div class="ds-sw__name">Blue · paper</div><div class="ds-sw__hex">#1366C8</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#3D1FC0"></div><div class="ds-sw__meta"><div class="ds-sw__name">Purple · paper</div><div class="ds-sw__hex">#3D1FC0</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#6A28D8"></div><div class="ds-sw__meta"><div class="ds-sw__name">Violet · paper</div><div class="ds-sw__hex">#6A28D8</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#A8328A"></div><div class="ds-sw__meta"><div class="ds-sw__name">Magenta · paper</div><div class="ds-sw__hex">#A8328A</div></div></div>
+        <div class="ds-sw"><div class="ds-sw__chip" style="background:#C85A1E"></div><div class="ds-sw__meta"><div class="ds-sw__name">Orange · paper</div><div class="ds-sw__hex">#C85A1E</div></div></div>
+      </div>
+
+      <h3 class="ds-sub">How accents are assigned</h3>
+      <table class="ds-table">
+        <thead><tr><th>Surface / context</th><th>Primary accent</th><th>Rule</th></tr></thead>
+        <tbody>
+          <tr><td>Cloud &amp; Infrastructure</td><td><span class="ds-code">blue</span></td><td>Hero + section identity</td></tr>
+          <tr><td>Cybersecurity</td><td><span class="ds-code">violet</span></td><td>Hero + section identity</td></tr>
+          <tr><td>AI &amp; Automation</td><td><span class="ds-code">magenta</span></td><td>Hero + section identity</td></tr>
+          <tr><td>Managed &amp; Support</td><td><span class="ds-code">orange</span></td><td>Hero + section identity</td></tr>
+          <tr><td>Within any page</td><td><span class="ds-code">distributed</span></td><td>Successive sections cycle hues for rhythm</td></tr>
+          <tr><td>Icon-card grids</td><td><span class="ds-code">blue→purple→magenta→violet→orange</span></td><td>Icons rotate the palette across cards</td></tr>
+        </tbody>
+      </table>
+      <div class="ds-dd">
+        <div class="ds-dd__do"><p class="ds-dd__t">Do</p><ul>
+          <li>Give each section one hue; let its tick + keyword share it</li>
+          <li>Vary hue between adjacent sections so a page travels</li>
+          <li>Use bright values on navy, deep values on paper</li>
+          <li>Keep accent area small — marks, keywords, icons</li>
+        </ul></div>
+        <div class="ds-dd__no"><p class="ds-dd__t">Don't</p><ul>
+          <li>Default everything to blue</li>
+          <li>Fill large blocks or backgrounds with an accent</li>
+          <li>Put a bright (dark-surface) hue as text on paper</li>
+          <li>Use more than one accent inside a single heading</li>
+        </ul></div>
+      </div>
+      <p class="ds-note" style="margin-top:24px"><b style="color:#fff">Accessibility —</b> body and UI text always meet WCAG AA (≥4.5:1); large display keywords clear ≥3:1 on their surface. Accent hues are only used at display scale or as graphic marks on the surface they were tuned for.</p>
+    </section>
+
+    <!-- ============ 04 GRADIENT ============ -->
+    <section class="ds-sec" id="gradient">
+      <p class="ds-kicker" style="--accent:var(--hue-violet-d)">04 — Gradient &amp; light</p>
+      <h2 class="ds-h">Light, not gloss.</h2>
+      <p class="ds-lead">The only gradients in the system are large, soft fields of near-black that lift a hero or anchor a CTA. They sit far behind content and are barely perceptible. There are no neon ramps, no coloured glows, no candy gradients.</p>
+      <div class="ds-demo">
+        <div class="ds-demo__bar">Hero light field — radial navy, &lt; 8% lift</div>
+        <div class="ds-demo__body" style="background:radial-gradient(120% 90% at 80% 0%, #16142e 0%, #0A091E 55%, #060512 100%);min-height:200px;display:flex;align-items:center">
+          <div><p class="kicker" style="--accent:var(--hue-violet-d)">Hero surface</p><div style="font-family:var(--ed-display);font-weight:500;font-size:clamp(24px,3vw,38px);letter-spacing:-0.025em;color:#fff;max-width:18ch;margin-top:14px">A quiet rise of light behind the headline.</div></div>
+        </div>
+      </div>
+      <div class="ds-dd">
+        <div class="ds-dd__do"><p class="ds-dd__t">Do</p><ul>
+          <li>Use one soft radial of near-black per hero</li>
+          <li>Keep transitions wide and low-contrast</li>
+          <li>Vary the light's position per page for subtle distinction</li>
+        </ul></div>
+        <div class="ds-dd__no"><p class="ds-dd__t">Don't</p><ul>
+          <li>Use saturated or multi-stop colour gradients</li>
+          <li>Add glow, bloom or coloured drop-shadows</li>
+          <li>Let a gradient compete with the content for attention</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============ 05 TYPOGRAPHY ============ -->
+    <section class="ds-sec ds-sec--paper" id="type">
+      <p class="ds-kicker" style="--accent:var(--hue-blue-p)">05 — Typography</p>
+      <h2 class="ds-h">Two families. A precise scale.</h2>
+      <p class="ds-lead"><b>Space Grotesk</b> is the editorial display voice — used for every heading at weight 500 with tight tracking. <b>Inter</b> carries body and UI. A monospace face handles eyebrows, labels and data. Type, more than colour, is what makes the work feel premium.</p>
+
+      <div style="margin-top:8px">
+        <div class="ds-typerow"><div class="ds-typerow__meta">Hero<br>clamp 36–66px<br>tracking −0.02em</div><div style="font-family:var(--ed-display);font-weight:500;font-size:clamp(34px,4.4vw,60px);letter-spacing:-0.025em;line-height:1.02;color:var(--on-paper)">The technology foundation for what's next.</div></div>
+        <div class="ds-typerow"><div class="ds-typerow__meta">Display / H1<br>clamp 29–52px</div><div style="font-family:var(--ed-display);font-weight:500;font-size:clamp(26px,3.3vw,46px);letter-spacing:-0.022em;line-height:1.05;color:var(--on-paper)">Built on expertise. Focused on outcomes.</div></div>
+        <div class="ds-typerow"><div class="ds-typerow__meta">Statement<br>clamp 25–42px</div><div style="font-family:var(--ed-display);font-weight:500;font-size:clamp(23px,2.7vw,38px);letter-spacing:-0.02em;line-height:1.06;color:var(--on-paper)">One method, end to end.</div></div>
+        <div class="ds-typerow"><div class="ds-typerow__meta">H2<br>clamp 22–33px</div><div style="font-family:var(--ed-display);font-weight:500;font-size:clamp(20px,2.2vw,30px);letter-spacing:-0.018em;color:var(--on-paper)">What changed for the business.</div></div>
+        <div class="ds-typerow"><div class="ds-typerow__meta">H3<br>clamp 21–27px</div><div style="font-family:var(--ed-display);font-weight:500;font-size:clamp(19px,1.9vw,25px);letter-spacing:-0.014em;color:var(--on-paper)">Improved infrastructure resilience</div></div>
+        <div class="ds-typerow"><div class="ds-typerow__meta">Lead<br>19–23px · Inter</div><div style="font-family:var(--ed-body);font-size:clamp(18px,1.5vw,22px);line-height:1.55;color:var(--on-paper-soft);max-width:52ch">Technology transformation succeeds when strategy, implementation, security and operations work together.</div></div>
+        <div class="ds-typerow"><div class="ds-typerow__meta">Body<br>17px · 1.6</div><div style="font-family:var(--ed-body);font-size:17px;line-height:1.6;color:var(--on-paper-soft);max-width:60ch">ICT helps organisations modernise infrastructure, strengthen resilience and unlock the value of cloud, cybersecurity, AI and managed services — engineered for environments that cannot stop.</div></div>
+        <div class="ds-typerow"><div class="ds-typerow__meta">Eyebrow<br>mono · 12.5px<br>tracking .22em</div><div style="font-family:var(--ed-mono);font-weight:500;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--on-paper-mute)">Technology partnerships</div></div>
+      </div>
+
+      <div class="ds-dd">
+        <div class="ds-dd__do"><p class="ds-dd__t">Do</p><ul>
+          <li>Set headings at weight 500 with negative tracking</li>
+          <li>Cap measure at ~60ch body / ~20ch display</li>
+          <li>Balance headline wrap; let body wrap pretty</li>
+          <li>Use mono only for eyebrows, labels and data</li>
+        </ul></div>
+        <div class="ds-dd__no"><p class="ds-dd__t">Don't</p><ul>
+          <li>Use heavy 700+ weights or all-caps body</li>
+          <li>Stretch lines beyond a comfortable measure</li>
+          <li>Mix in a third display typeface</li>
+          <li>Drop below 15px for any reading text</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============ 06 LAYOUT ============ -->
+    <section class="ds-sec" id="layout">
+      <p class="ds-kicker" style="--accent:var(--hue-magenta-d)">06 — Layout &amp; grid</p>
+      <h2 class="ds-h">An editorial frame, divided by hairlines.</h2>
+      <p class="ds-lead">Content lives in a 1320px max container with a fluid gutter. Within it, related items sit in <em style="color:#fff;font-style:normal">divided grids</em> — cells separated by 1px rules rather than gaps — which gives the work its calm, tabular, editorial structure.</p>
+      <table class="ds-table">
+        <thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>--maxw</td><td><span class="ds-code">1320px</span></td><td>Content container</td></tr>
+          <tr><td>--gutter</td><td><span class="ds-code">clamp(22px, 5vw, 84px)</span></td><td>Inline page padding</td></tr>
+          <tr><td>--section-y</td><td><span class="ds-code">clamp(76px, 9.5vw, 150px)</span></td><td>Vertical section rhythm</td></tr>
+          <tr><td>--col-pad</td><td><span class="ds-code">clamp(26px, 2.6vw, 48px)</span></td><td>Inner padding of divided cells</td></tr>
+          <tr><td>Grid hairline</td><td><span class="ds-code">1px · rule-dark / rule-paper</span></td><td>Cell separators &amp; frame</td></tr>
+        </tbody>
+      </table>
+      <h3 class="ds-sub">Spacing scale</h3>
+      <p class="ds-note">A simple, mostly-even step. Use clamp() to let large gaps breathe on wide screens and tighten on mobile.</p>
+      <div class="ds-stack" style="margin-top:18px">
+        <span class="ds-pill">6</span><span class="ds-pill">10</span><span class="ds-pill">14</span><span class="ds-pill">20</span><span class="ds-pill">28</span><span class="ds-pill">40</span><span class="ds-pill">56</span><span class="ds-pill">72</span><span class="ds-pill">96</span><span class="ds-pill">120</span>
+      </div>
+    </section>
+
+    <!-- ============ 07 COMPONENTS ============ -->
+    <section class="ds-sec ds-sec--paper" id="components">
+      <p class="ds-kicker" style="--accent:var(--hue-orange-p)">07 — Components</p>
+      <h2 class="ds-h">The building blocks, shown live.</h2>
+      <p class="ds-lead">Every example below is rendered with the production CSS. Copy the structure, not a screenshot.</p>
+
+      <h3 class="ds-sub">Buttons</h3>
+      <div class="ds-demo">
+        <div class="ds-demo__bar">Buttons · primary / line / solid — radius 2px, display 500</div>
+        <div class="ds-demo__body is-ink" style="display:flex;gap:16px;flex-wrap:wrap" class="s-ink">
+          <span class="s-ink" style="display:contents">
+            <a class="btn btn--primary" href="#components">Primary <span class="ar" aria-hidden="true">→</span></a>
+            <a class="btn btn--solid-light" href="#components">Solid light</a>
+            <a class="btn btn--line" href="#components" style="border-color:var(--rule-dark);color:var(--on-dark)">Outline</a>
+          </span>
+        </div>
+      </div>
+
+      <h3 class="ds-sub">Eyebrow + section head + accent keyword</h3>
+      <div class="ds-demo">
+        <div class="ds-demo__bar">Section header · kicker tick + tword inherit the section hue</div>
+        <div class="ds-demo__body is-ink acc-magenta">
+          <div class="s-ink">
+            <p class="kicker">Outcomes we deliver</p>
+            <h2 class="sec-head__title" style="font-family:var(--ed-display);font-weight:500;font-size:clamp(22px,2.2vw,33px);letter-spacing:-0.022em;color:#fff;margin-top:14px;max-width:24ch">What <span class="tword">good</span> looks like.</h2>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="ds-sub">Icon cards — the icon is the accent</h3>
+      <p class="ds-note">Cards carry no top bar. The icon is the colour anchor and rotates the palette across the grid. Hierarchy is icon → title → copy.</p>
+      <div class="ds-demo">
+        <div class="ds-demo__bar">Icon card grid · divided, distributed icon colour</div>
+        <div class="ds-demo__body is-ink" style="padding:0">
+          <div class="s-ink">
+            <div class="icard-grid" id="demo-cards"></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="ds-sub">Partner logo wall — optical sizing, monochrome</h3>
+      <div class="ds-demo">
+        <div class="ds-demo__bar">Logo system · currentColor recolour, optically balanced</div>
+        <div class="ds-demo__body is-ink" style="padding:0">
+          <div class="s-ink"><div class="partners__grid" id="demo-logos"></div></div>
+        </div>
+      </div>
+
+      <h3 class="ds-sub">Tags &amp; metrics</h3>
+      <div class="ds-demo">
+        <div class="ds-demo__bar">Tags &amp; stat — mono labels, display figures</div>
+        <div class="ds-demo__body is-ink" style="display:flex;gap:40px;flex-wrap:wrap;align-items:center">
+          <div class="s-ink ds-stack">
+            <span class="ds-pill">Azure OpenAI</span><span class="ds-pill">Zero Trust</span><span class="ds-pill">Hybrid cloud</span>
+          </div>
+          <div style="display:flex;gap:32px">
+            <div><div style="font-family:var(--ed-display);font-weight:500;font-size:40px;letter-spacing:-0.02em;color:#fff;line-height:1">99.95%</div><div style="font-family:var(--ed-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-mute);margin-top:8px">Availability</div></div>
+            <div><div style="font-family:var(--ed-display);font-weight:500;font-size:40px;letter-spacing:-0.02em;color:#fff;line-height:1">12M+</div><div style="font-family:var(--ed-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-mute);margin-top:8px">Documents</div></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="ds-sub">Component inventory</h3>
+      <p class="ds-note">The full set in production, all governed by the rules above:</p>
+      <div class="ds-stack" style="margin-top:16px">
+        <span class="ds-pill">Sticky nav</span><span class="ds-pill">Mega panel</span><span class="ds-pill">Mobile sheet</span><span class="ds-pill">Hero</span><span class="ds-pill">Page header</span><span class="ds-pill">Section head</span><span class="ds-pill">Icon card</span><span class="ds-pill">Capability map</span><span class="ds-pill">Process stages</span><span class="ds-pill">Story bento</span><span class="ds-pill">Logo wall</span><span class="ds-pill">Ecosystem card</span><span class="ds-pill">Metrics</span><span class="ds-pill">Takeaways</span><span class="ds-pill">Next-band</span><span class="ds-pill">CTA panel</span><span class="ds-pill">Info-required</span><span class="ds-pill">Buttons</span><span class="ds-pill">Text link</span><span class="ds-pill">Form fields</span><span class="ds-pill">Footer</span>
+      </div>
+    </section>
+
+    <!-- ============ 08 ICONOGRAPHY ============ -->
+    <section class="ds-sec" id="icons">
+      <p class="ds-kicker" style="--accent:var(--hue-blue-d)">08 — Iconography</p>
+      <h2 class="ds-h">One weight. Rounded joins. Honest accent.</h2>
+      <p class="ds-lead">Icons are drawn on a 28px grid, single 1.5px stroke, round caps and joins, no fill. They carry brand colour directly — and distribute across a grid rather than all sharing one hue. No badges, plinths or decorative containers.</p>
+      <div class="ds-icons" id="demo-iconset"></div>
+      <table class="ds-table">
+        <thead><tr><th>Property</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Grid</td><td><span class="ds-code">28 × 28</span></td></tr>
+          <tr><td>Stroke</td><td><span class="ds-code">1.5px · round cap + join · no fill</span></td></tr>
+          <tr><td>Display size</td><td><span class="ds-code">24–28px in cards · 16px inline</span></td></tr>
+          <tr><td>Colour</td><td><span class="ds-code">currentColor → distributed accent</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============ 09 ILLUSTRATION ============ -->
+    <section class="ds-sec ds-sec--paper" id="illustration">
+      <p class="ds-kicker" style="--accent:var(--hue-purple-p)">09 — Illustration</p>
+      <h2 class="ds-h">Abstract infrastructure, drawn in line.</h2>
+      <p class="ds-lead">Hero and concept art is built from a single language: thin strokes, sparse nodes and one accent-marked focal element, suggesting networks, platforms and flows. It is richer than flat SaaS spot-art but never literal or photographic.</p>
+      <div class="ds-demo">
+        <div class="ds-demo__bar">Line-system motif — stroke currentColor, one accent node</div>
+        <div class="ds-demo__body" style="background:#0A091E;display:flex;justify-content:center">
+          <svg viewBox="0 0 320 200" width="320" height="200" fill="none" aria-hidden="true" style="color:var(--on-dark);max-width:100%">
+            <g stroke="currentColor" stroke-width="1" opacity="0.28">
+              <rect x="20" y="30" width="280" height="48"/><rect x="20" y="92" width="280" height="48"/><rect x="20" y="154" width="280" height="30"/>
+              <line x1="90" y1="78" x2="90" y2="92"/><line x1="160" y1="78" x2="160" y2="92"/><line x1="230" y1="78" x2="230" y2="92"/>
+            </g>
+            <rect x="146" y="44" width="28" height="20" fill="#B481FF"/>
+            <circle cx="90" cy="116" r="4" fill="none" stroke="currentColor" opacity="0.6"/><circle cx="230" cy="116" r="4" fill="none" stroke="currentColor" opacity="0.6"/>
+          </svg>
+        </div>
+      </div>
+      <div class="ds-dd">
+        <div class="ds-dd__do"><p class="ds-dd__t">Do</p><ul>
+          <li>Build from thin strokes + sparse nodes</li>
+          <li>Mark exactly one focal element in an accent</li>
+          <li>Keep compositions abstract and calm</li>
+        </ul></div>
+        <div class="ds-dd__no"><p class="ds-dd__t">Don't</p><ul>
+          <li>Use literal 3D, isometric or mascot art</li>
+          <li>Fill shapes with multiple bright colours</li>
+          <li>Add gradients, shadows or texture</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============ 10 MOTION ============ -->
+    <section class="ds-sec" id="motion">
+      <p class="ds-kicker" style="--accent:var(--hue-violet-d)">10 — Motion &amp; interaction</p>
+      <h2 class="ds-h">Calm, purposeful, almost unnoticed.</h2>
+      <p class="ds-lead">Motion clarifies sequence and rewards intent — it never performs. One easing curve carries almost everything. Targets the quality bar of Stripe, Linear and Apple: present, never theatrical. All motion respects <span class="ds-code" style="color:var(--hue-violet-d)">prefers-reduced-motion</span>.</p>
+      <table class="ds-table">
+        <thead><tr><th>Interaction</th><th>Behaviour</th><th>Timing</th></tr></thead>
+        <tbody>
+          <tr><td>Scroll reveal</td><td>opacity 0→1, translateY 22px→0; staggered .08s</td><td><span class="ds-code">.8s · (.22,1,.36,1)</span></td></tr>
+          <tr><td>Button / card hover</td><td>colour + 1–3px lift; arrow nudges 4–5px</td><td><span class="ds-code">.25–.35s ease</span></td></tr>
+          <tr><td>Text link</td><td>underline wipes in; colour → electric blue</td><td><span class="ds-code">.35s · (.22,1,.36,1)</span></td></tr>
+          <tr><td>Logo hover</td><td>grey lifts toward white · no scale</td><td><span class="ds-code">.25s ease</span></td></tr>
+          <tr><td>Line-draw motif</td><td>stroke-dashoffset draws on enter</td><td><span class="ds-code">1.6s · (.22,1,.36,1)</span></td></tr>
+        </tbody>
+      </table>
+      <div class="ds-dd">
+        <div class="ds-dd__do"><p class="ds-dd__t">Do</p><ul>
+          <li>Use one signature easing for cohesion</li>
+          <li>Animate to clarify sequence and hierarchy</li>
+          <li>Keep hover shifts small (≤5px) and quick</li>
+        </ul></div>
+        <div class="ds-dd__no"><p class="ds-dd__t">Don't</p><ul>
+          <li>Scale, bounce or spin on hover</li>
+          <li>Loop decorative animation under content</li>
+          <li>Animate so long the user waits on it</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============ 11 CONTENT ============ -->
+    <section class="ds-sec ds-sec--paper" id="content">
+      <p class="ds-kicker" style="--accent:var(--hue-blue-p)">11 — Content design</p>
+      <h2 class="ds-h">Structured to be scanned, then trusted.</h2>
+      <p class="ds-lead">Copy follows a repeatable spine so any section is legible in seconds and credible on a second read.</p>
+      <table class="ds-table">
+        <thead><tr><th>Block</th><th>Pattern</th></tr></thead>
+        <tbody>
+          <tr><td>Eyebrow</td><td>2–3 words, category label, uppercase mono</td></tr>
+          <tr><td>Headline</td><td>One idea, ≤7 words; highlight a single meaningful word</td></tr>
+          <tr><td>Supporting copy</td><td>1–2 sentences, ≤60ch measure, plain enterprise English</td></tr>
+          <tr><td>Proof points</td><td>3–6 parallel items; verb-led titles + one-line support</td></tr>
+          <tr><td>Statistics</td><td>Display figure + mono label; only when verifiable</td></tr>
+          <tr><td>Call to action</td><td>One clear next step, action verb, never two competing CTAs</td></tr>
+        </tbody>
+      </table>
+      <p class="ds-note" style="margin-top:24px">Voice: confident, specific, jargon-light. Lead with the business outcome; let the technology follow. Never pad with filler stats or adjectives.</p>
+    </section>
+
+    <!-- ============ 12 DECKS ============ -->
+    <section class="ds-sec" id="decks">
+      <p class="ds-kicker" style="--accent:var(--hue-orange-d)">12 — Presentation decks</p>
+      <h2 class="ds-h">The website, on 16:9.</h2>
+      <p class="ds-lead">A deck is the same system at a different aspect ratio — same ink/paper surfaces, Space Grotesk display, eyebrow ticks, distributed accents and line-art. Not a separate visual language.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:28px">
+        <div>
+          <div style="aspect-ratio:16/9;background:radial-gradient(120% 100% at 78% 0%,#16142e,#060512);border:1px solid var(--rule-dark);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end">
+            <p style="font-family:var(--ed-mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-mute);display:flex;align-items:center;gap:8px;margin:0 0 10px"><span style="width:14px;height:2px;background:var(--hue-blue-d)"></span>Capability statement</p>
+            <div style="font-family:var(--ed-display);font-weight:500;font-size:20px;letter-spacing:-0.02em;color:#fff;line-height:1.05">The technology foundation for <span style="color:var(--hue-blue-d)">what's next</span>.</div>
+          </div>
+          <p class="ds-note" style="margin-top:10px">Cover — ink-deep, light field, eyebrow tick, one keyword in accent.</p>
+        </div>
+        <div>
+          <div style="aspect-ratio:16/9;background:var(--paper);border:1px solid var(--rule-paper);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:center">
+            <p style="font-family:var(--ed-mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--on-paper-mute);display:flex;align-items:center;gap:8px;margin:0 0 10px"><span style="width:14px;height:2px;background:var(--hue-magenta-p)"></span>What we deliver</p>
+            <div style="font-family:var(--ed-display);font-weight:500;font-size:19px;letter-spacing:-0.018em;color:var(--on-paper);line-height:1.08">Capabilities, <span style="color:var(--hue-magenta-p)">engineered</span> for scale.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule-paper);border:1px solid var(--rule-paper);margin-top:14px">
+              <div style="background:var(--paper);height:26px"></div><div style="background:var(--paper);height:26px"></div><div style="background:var(--paper);height:26px"></div><div style="background:var(--paper);height:26px"></div>
+            </div>
+          </div>
+          <p class="ds-note" style="margin-top:10px">Content — paper, divided grid, one accent keyword.</p>
+        </div>
+        <div>
+          <div style="aspect-ratio:16/9;background:#0A091E;border:1px solid var(--rule-dark);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start">
+            <div style="font-family:var(--ed-display);font-weight:500;font-size:44px;letter-spacing:-0.02em;color:#fff;line-height:1">99.95%</div>
+            <div style="font-family:var(--ed-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-mute);margin-top:10px">Platform availability · Financial Services</div>
+          </div>
+          <p class="ds-note" style="margin-top:10px">Data — one figure owns the slide; mono label supports.</p>
+        </div>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>Slide type</th><th>Treatment</th></tr></thead>
+        <tbody>
+          <tr><td>Cover</td><td>Ink-deep + light field, eyebrow tick, accent keyword</td></tr>
+          <tr><td>Section divider</td><td>Full-bleed ink, large index number, one hue</td></tr>
+          <tr><td>Content</td><td>Paper, divided grid, ≤6 proof points</td></tr>
+          <tr><td>Process</td><td>Numbered stages with per-stage accent marks</td></tr>
+          <tr><td>Data</td><td>One display figure dominant; mono label</td></tr>
+          <tr><td>Case study</td><td>Challenge → solution → outcome; metric callouts</td></tr>
+          <tr><td>Closing</td><td>Ink-deep CTA panel, single action</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============ 13 TOKENS ============ -->
+    <section class="ds-sec ds-sec--paper" id="tokens">
+      <p class="ds-kicker" style="--accent:var(--hue-violet-p)">13 — Design tokens</p>
+      <h2 class="ds-h">Implementation reference.</h2>
+      <p class="ds-lead">Copy-ready values. These are the same custom properties used across the live site (<span class="ds-code">css/base.css</span>).</p>
+
+      <h3 class="ds-sub">Radius, shadow &amp; motion</h3>
+      <table class="ds-table">
+        <thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>radius / control</td><td><span class="ds-code">2–3px</span></td><td>Buttons, inputs, chips</td></tr>
+          <tr><td>radius / panel</td><td><span class="ds-code">clamp(16px, 1.6vw, 26px)</span></td><td>CTA &amp; feature panels</td></tr>
+          <tr><td>shadow / lift</td><td><span class="ds-code">0 10px 30px -8px rgba(0,0,0,.5)</span></td><td>Sparingly, floating elements</td></tr>
+          <tr><td>ease / signature</td><td><span class="ds-code">cubic-bezier(.22, 1, .36, 1)</span></td><td>Reveals, draws, link wipes</td></tr>
+          <tr><td>duration / hover</td><td><span class="ds-code">.20–.35s</span></td><td>Hover &amp; state change</td></tr>
+          <tr><td>duration / reveal</td><td><span class="ds-code">.8s · stagger .08s</span></td><td>Scroll entrance</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="ds-sub">Type scale</h3>
+      <table class="ds-table">
+        <thead><tr><th>Token</th><th>Clamp</th></tr></thead>
+        <tbody>
+          <tr><td>--t-hero</td><td><span class="ds-code">clamp(36px, 4.6vw, 66px)</span></td></tr>
+          <tr><td>--t-display</td><td><span class="ds-code">clamp(29px, 3.5vw, 52px)</span></td></tr>
+          <tr><td>--t-stmt</td><td><span class="ds-code">clamp(25px, 2.9vw, 42px)</span></td></tr>
+          <tr><td>--t-h2</td><td><span class="ds-code">clamp(22px, 2.2vw, 33px)</span></td></tr>
+          <tr><td>--t-h3</td><td><span class="ds-code">clamp(21px, 1.9vw, 27px)</span></td></tr>
+          <tr><td>--t-lead</td><td><span class="ds-code">clamp(19px, 1.5vw, 23px)</span></td></tr>
+          <tr><td>--t-body / small / label</td><td><span class="ds-code">17px / 15px / 12.5px</span></td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="ds-sub">Families</h3>
+      <table class="ds-table">
+        <thead><tr><th>Token</th><th>Stack</th></tr></thead>
+        <tbody>
+          <tr><td>--ed-display</td><td><span class="ds-code">"Space Grotesk", system-ui, sans-serif</span></td></tr>
+          <tr><td>--ed-body</td><td><span class="ds-code">"Inter", system-ui, sans-serif</span></td></tr>
+          <tr><td>--ed-mono</td><td><span class="ds-code">ui-monospace, "JetBrains Mono", Menlo, monospace</span></td></tr>
+        </tbody>
+      </table>
+      <p class="ds-note" style="margin-top:40px;padding-top:24px;border-top:1px solid var(--rule-paper)">ICT Digital Design System · extracted from the live website · v1.0. Hand this document, plus <span class="ds-code">ds/colors_and_type.css</span> and <span class="ds-code">css/base.css</span>, to any designer, developer or agency to keep future work in the same ecosystem.</p>
+    </section>
+
+  </main>
+</div>
+
+<script>
+/* ---- live icon set ---- */
+const ICONS = {
+  cloud:'<path d="M8 20h11a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 7.7 11 4.5 4.5 0 0 0 8 20Z"/>',
+  shield:'<path d="M14 3l8 3v6c0 5-3.4 8.8-8 10-4.6-1.2-8-5-8-10V6l8-3Z"/><path d="M10.5 13.5l2.3 2.3 4.2-4.6"/>',
+  ai:'<rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M11 5v3M17 5v3M11 20v3M17 20v3M5 11h3M5 17h3M20 11h3M20 17h3"/><circle cx="14" cy="14" r="2.4"/>',
+  network:'<circle cx="14" cy="6" r="2.6"/><circle cx="6" cy="21" r="2.6"/><circle cx="22" cy="21" r="2.6"/><path d="M14 8.6v4M12 14l-4 4.6M16 14l4 4.6"/>',
+  data:'<ellipse cx="14" cy="7" rx="8" ry="3"/><path d="M6 7v7c0 1.7 3.6 3 8 3s8-1.3 8-3V7M6 14v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/>',
+  lock:'<rect x="6" y="12" width="16" height="11" rx="2"/><path d="M9.5 12V9a4.5 4.5 0 0 1 9 0v3"/><circle cx="14" cy="17.5" r="1.4"/>',
+  radar:'<circle cx="14" cy="14" r="9"/><circle cx="14" cy="14" r="4.5"/><path d="M14 14l6-4"/>',
+  layers:'<path d="M14 4l9 5-9 5-9-5 9-5Z"/><path d="M5 14l9 5 9-5M5 18.5l9 5 9-5"/>',
+  operations:'<circle cx="14" cy="14" r="3.2"/><path d="M14 4v3M14 21v3M4 14h3M21 14h3M7 7l2 2M19 19l2 2M7 21l2-2M19 9l2-2"/>',
+  compass:'<circle cx="14" cy="14" r="10"/><path d="M18 10l-2.4 5.6L10 18l2.4-5.6L18 10Z"/>',
+  bolt:'<path d="M15 3L6 16h6l-1 9 9-13h-6l1-9Z"/>',
+  target:'<circle cx="14" cy="14" r="9"/><circle cx="14" cy="14" r="5"/><circle cx="14" cy="14" r="1.3" fill="currentColor" stroke="none"/>'
+};
+function svgFor(name){ return '<svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICONS[name]+'</svg>'; }
+
+/* icon set grid */
+(function(){
+  const host=document.getElementById('demo-iconset'); if(!host) return;
+  const names=Object.keys(ICONS);
+  names.forEach((n,i)=>{
+    const d=document.createElement('div'); d.className='ds-icon';
+    d.innerHTML='<span class="ds-i'+((i%5)+1)+'">'+svgFor(n)+'</span><span>'+n+'</span>';
+    host.appendChild(d);
   });
-</script>
+})();
 
-<script src="components/smooth-scroll.js"></script>
+/* icon-card demo */
+(function(){
+  const host=document.getElementById('demo-cards'); if(!host) return;
+  const cards=[
+    {i:'cloud',h:'Hybrid &amp; Multi-Cloud',p:'Public, private and hybrid environments, engineered for control.'},
+    {i:'shield',h:'Digital Resilience',p:'Security embedded across identity, data, network and operations.'},
+    {i:'ai',h:'Intelligent Automation',p:'Governed AI moved from pilot into production value.'},
+    {i:'network',h:'Connected Infrastructure',p:'Resilient, software-defined connectivity across the estate.'},
+    {i:'data',h:'Data Foundations',p:'Production-ready, governed data platforms.'},
+    {i:'operations',h:'Managed Operations',p:'SLA-backed monitoring, support and optimisation.'}
+  ];
+  cards.forEach(c=>{
+    const el=document.createElement('div'); el.className='icard';
+    el.innerHTML='<span class="icard__ic">'+svgFor(c.i)+'</span><h3 class="icard__h">'+c.h+'</h3><p class="icard__p">'+c.p+'</p>';
+    host.appendChild(el);
+  });
+})();
+
+/* partner logo wall */
+(function(){
+  const host=document.getElementById('demo-logos'); if(!host) return;
+  const partners=[['Microsoft','microsoft'],['Cisco','cisco'],['Google Cloud','googlecloud'],['Palo Alto Networks','paloalto'],['IBM','ibm'],['Dell Technologies','dell'],['HPE','hpe'],['Nutanix','nutanix'],['Veeam','veeam']];
+  partners.forEach(([name,slug])=>{
+    const cell=document.createElement('div'); cell.className='partners__cell';
+    const sp=document.createElement('span'); sp.className='partner-logo partner-logo--'+slug; sp.setAttribute('role','img'); sp.setAttribute('aria-label',name+' logo');
+    fetch('assets/partners/'+slug+'.svg').then(r=>r.text()).then(svg=>{ sp.innerHTML=svg; const s=sp.querySelector('svg'); if(s){s.removeAttribute('width');s.removeAttribute('height');s.setAttribute('aria-hidden','true');} }).catch(()=>{});
+    cell.appendChild(sp); host.appendChild(cell);
+  });
+})();
+</script>
 </body>
 </html>
